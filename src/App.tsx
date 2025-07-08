@@ -13,6 +13,8 @@ declare global {
         'auto-rotate'?: boolean;
         'camera-controls'?: boolean;
         'skybox-image'?: string;
+        'interaction-policy'?: string;
+        'touch-action'?: string;
         style?: React.CSSProperties;
       };
     }
@@ -25,7 +27,29 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [eligibleForRewards, setEligibleForRewards] = useState(false);
+  const [isInteractingWithModel, setIsInteractingWithModel] = useState(false);
 
+  useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) => {
+      if (isInteractingWithModel) {
+        e.preventDefault();
+      }
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      if (isInteractingWithModel) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('wheel', handleWheel);
+    };
+  }, [isInteractingWithModel]);
   const launchConfetti = () => {
     confetti({
       particleCount: 100,
@@ -121,11 +145,18 @@ export default function App() {
           ar
           auto-rotate
           camera-controls
+          interaction-policy="allow-when-focused"
+          touch-action="pan-y"
           style={{
             width: "100%",
             height: "100%",
             background: "transparent",
           }}
+          onPointerDown={() => setIsInteractingWithModel(true)}
+          onPointerUp={() => setIsInteractingWithModel(false)}
+          onPointerLeave={() => setIsInteractingWithModel(false)}
+          onTouchStart={() => setIsInteractingWithModel(true)}
+          onTouchEnd={() => setIsInteractingWithModel(false)}
         >
           <div
             style={{
@@ -503,6 +534,14 @@ export default function App() {
           to { transform: rotate(360deg); }
         }
         
+       model-viewer {
+         touch-action: none;
+       }
+       
+       model-viewer:focus {
+         outline: none;
+       }
+       
         input::placeholder {
           color: rgba(203, 213, 225, 0.9) !important;
         }
