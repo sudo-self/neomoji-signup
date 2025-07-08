@@ -46,20 +46,26 @@ export default function App() {
     }
 
     try {
-      // Simulate checking for early access eligibility
-      const isEligible = Math.random() < 0.3; // 30% chance to be eligible
-      
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // In a real app, you'd send to your backend and email service
-      // For demo purposes, we'll just simulate success
-      console.log('Email submitted:', email);
+      const response = await fetch('/functions/v1/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setError(result.error || "Something went wrong.");
+        setLoading(false);
+        return;
+      }
       
       setSubmitted(true);
       setEmail("");
       launchConfetti();
-      setEligibleForRewards(isEligible);
+      setEligibleForRewards(result.eligible);
     } catch (err) {
       console.error("Form error:", err);
       setError("Network error. Please try again.");
