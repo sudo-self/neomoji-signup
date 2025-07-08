@@ -58,7 +58,7 @@ export default function App() {
       }
 
       // Send to Formspree for email collection
-      const response = await fetch("https://formspree.io/f/xgejnqyw", {
+      const response = await fetch("https://formspree.io/f/xvgpyrpp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
