@@ -262,7 +262,7 @@ export default function App() {
                     fontSize: "0.9rem",
                     fontWeight: 500,
                     textAlign: "center",
-                    color: "#e2e8f0",
+                    color: "#f1f5f9",
                   }}
                 >
                   official playstore link sent to your email
@@ -282,7 +282,7 @@ export default function App() {
                     border: "1px solid rgba(255, 255, 255, 0.2)",
                     borderRadius: "8px",
                     fontSize: "1rem",
-                    background: "rgba(255, 255, 255, 0.1)",
+                    background: "rgba(15, 23, 42, 0.8)",
                     color: "#f8fafc",
                     backdropFilter: "blur(10px)",
                     boxSizing: "border-box",
@@ -407,13 +407,14 @@ export default function App() {
         }
         
         input::placeholder {
-          color: rgba(203, 213, 225, 0.7);
+          color: rgba(148, 163, 184, 0.8) !important;
         }
         
         input:focus {
           outline: none;
           border-color: rgba(59, 130, 246, 0.5);
           box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+          background: rgba(15, 23, 42, 0.9) !important;
         }
       `}</style>
     </div>
