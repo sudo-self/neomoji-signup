@@ -138,7 +138,7 @@ export default function App() {
               textShadow: "0 0 10px rgba(16, 185, 129, 0.5)",
             }}
           >
-            🎉 🎁
+            💯 🎁 💝 🎬
           </div>
         </model-viewer>
       </div>
@@ -244,7 +244,7 @@ export default function App() {
                 textAlign: "center"
               }}
             >
-              ⭐ Rated E for Everyone • Join thousands of beta testers!
+              ⭐ Rated E for Everyone • Join the early release!
             </p>
 
             {eligibleForRewards && (
