@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import '@google/model-viewer';
+import { supabase } from './lib/supabase';
 
 // Type declaration for model-viewer element
 declare global {
@@ -46,6 +47,16 @@ export default function App() {
     }
 
     try {
+      // Store email in Supabase database
+      const { error: supabaseError } = await supabase
+        .from('email_signups')
+        .insert([{ email }]);
+
+      if (supabaseError) {
+        console.error('Supabase error:', supabaseError);
+        // Continue with Formspree even if Supabase fails
+      }
+
       // Send to Formspree for email collection
       const response = await fetch("https://formspree.io/f/xgejnqyw", {
         method: "POST",
@@ -58,8 +69,8 @@ export default function App() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Simulate checking for early access eligibility
-      const isEligible = Math.random() < 0.3; // 30% chance to be eligible
+      // Everyone gets rewards now!
+      const isEligible = true;
       
       setSubmitted(true);
       setEmail("");
@@ -67,7 +78,7 @@ export default function App() {
       setEligibleForRewards(isEligible);
     } catch (err) {
       console.error("Form submission error:", err);
-      setError("Network error. Please try again.");
+      setError("There was an issue submitting your email. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -137,16 +148,16 @@ export default function App() {
           style={{
             marginTop: "-1rem",
             marginBottom: "1rem",
-            background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+            background: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)",
             color: "#fff",
             padding: "0.4rem 1rem",
             borderRadius: "999px",
             fontSize: "0.8rem",
             fontWeight: "bold",
-            boxShadow: "0 4px 15px rgba(16, 185, 129, 0.3)",
+            boxShadow: "0 4px 15px rgba(251, 191, 36, 0.3)",
           }}
         >
-          🎉 One of the First 20!
+          🎁 FREE REWARDS UNLOCKED!
         </div>
       )}
           
