@@ -177,17 +177,74 @@ export default function App() {
       >
         {submitted ? (
           <div style={{ color: "#10b981", textAlign: "center" }}>
-            <h3 style={{ fontSize: "1.25rem", marginBottom: "0.5rem", color: "#10b981" }}>🎉 Thank You!</h3>
-            <p style={{ color: "#e2e8f0" }}>You now have early access to the NeoMoji App</p>
+            <h3 style={{ 
+              fontSize: "1.5rem", 
+              marginBottom: "0.75rem", 
+              color: "#10b981",
+              textShadow: "0 0 15px rgba(16, 185, 129, 0.5)"
+            }}>
+              🎉 WELCOME TO THE BETA! 🎉
+            </h3>
+            
+            <div
+              style={{
+                background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+                color: "#fff",
+                padding: "1rem",
+                borderRadius: "12px",
+                marginBottom: "1rem",
+                boxShadow: "0 4px 15px rgba(16, 185, 129, 0.3)",
+                border: "2px solid rgba(255, 255, 255, 0.2)",
+              }}
+            >
+              <p style={{ 
+                fontSize: "1.1rem", 
+                fontWeight: "bold", 
+                marginBottom: "0.5rem",
+                color: "#fff"
+              }}>
+                🚀 INSTALL NOW ON GOOGLE PLAY!
+              </p>
+              <a
+                href="https://play.google.com/apps/testing/app.vercel.neomoji.twa"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  background: "rgba(255, 255, 255, 0.2)",
+                  color: "#fff",
+                  padding: "0.75rem 1.5rem",
+                  borderRadius: "8px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  border: "2px solid rgba(255, 255, 255, 0.3)",
+                  transition: "all 0.2s ease",
+                  textShadow: "0 0 10px rgba(255, 255, 255, 0.3)",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.3)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                📱 INSTALL NEOMOJI BETA
+              </a>
+            </div>
+            
             <p
               style={{
                 fontStyle: "italic",
                 fontSize: "0.9rem",
-                marginTop: "0.5rem",
+                marginBottom: "1rem",
                 color: "#cbd5e1",
+                textAlign: "center"
               }}
             >
-              In a few minutes check your email for an Official Playstore Link!
+              ⭐ Rated E for Everyone • Join thousands of beta testers!
             </p>
 
             {eligibleForRewards && (
@@ -247,27 +304,51 @@ export default function App() {
               style={{
                 marginBottom: "1.25rem",
                 textAlign: "center",
-                fontSize: "1.4rem",
+                fontSize: "1.6rem",
                 fontWeight: 600,
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, #ff6b6b 0%, #ffd93d 50%, #6bcf7f 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
+                textShadow: "0 0 20px rgba(255, 107, 107, 0.3)",
+                animation: "pulse 2s ease-in-out infinite alternate",
               }}
             >
-              NeoMoji Playstore Beta!
+              🚀 NeoMoji Beta - NOW LIVE! 🚀
             </h2>
+
+            <div
+              style={{
+                background: "linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)",
+                color: "#fff",
+                padding: "0.75rem 1rem",
+                borderRadius: "12px",
+                fontSize: "0.9rem",
+                fontWeight: "bold",
+                textAlign: "center",
+                marginBottom: "1rem",
+                boxShadow: "0 4px 15px rgba(255, 107, 107, 0.3)",
+                border: "2px solid rgba(255, 255, 255, 0.2)",
+              }}
+            >
+              ⭐ RATED E FOR EVERYONE ⭐<br/>
+              <span style={{ fontSize: "0.8rem", fontWeight: "normal" }}>
+                Join thousands already testing!
+              </span>
+            </div>
 
             <p
               style={{
                 fontStyle: "italic",
-                color: "#60a5fa",
+                color: "#fbbf24",
                 marginBottom: "1rem",
                 textAlign: "center",
-                textShadow: "0 0 10px rgba(96, 165, 250, 0.3)",
+                textShadow: "0 0 15px rgba(251, 191, 36, 0.5)",
+                fontSize: "1rem",
+                fontWeight: "600",
               }}
             >
-              Sign up now to unlock immediate rewards!
+              🎁 Get instant rewards + Google Play access!
             </p>
 
             <form onSubmit={handleSubmit}>
@@ -284,7 +365,7 @@ export default function App() {
                     textShadow: "0 0 8px rgba(255, 255, 255, 0.3)",
                   }}
                 >
-                  official playstore link sent to your email
+                  🎮 Get Google Play testing link instantly!
                 </label>
                 <input
                   type="email"
@@ -413,6 +494,11 @@ export default function App() {
       />
 
       <style>{`
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.05); }
+        }
+        
         @keyframes spin {
           to { transform: rotate(360deg); }
         }
