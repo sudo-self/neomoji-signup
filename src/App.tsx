@@ -371,19 +371,15 @@ export default function App() {
         )}
       </div>
 
-      <div
+      <img
+        src="/PreRegisterOnGooglePlay.png"
+        alt="Pre-register on Google Play"
         style={{
           marginTop: "1.5rem",
           width: "180px",
-          height: "60px",
-          background: "linear-gradient(135deg, #059669 0%, #047857 100%)",
-          borderRadius: "12px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          height: "auto",
           cursor: "pointer",
           transition: "all 0.2s ease",
-          boxShadow: "0 4px 15px rgba(5, 150, 105, 0.3)",
         }}
         onClick={() =>
           window.open(
@@ -393,17 +389,13 @@ export default function App() {
         }
         onMouseOver={(e) => {
           e.currentTarget.style.transform = "translateY(-2px)";
-          e.currentTarget.style.boxShadow = "0 6px 20px rgba(5, 150, 105, 0.4)";
+          e.currentTarget.style.filter = "brightness(1.1)";
         }}
         onMouseOut={(e) => {
           e.currentTarget.style.transform = "translateY(0)";
-          e.currentTarget.style.boxShadow = "0 4px 15px rgba(5, 150, 105, 0.3)";
+          e.currentTarget.style.filter = "brightness(1)";
         }}
-      >
-        <span style={{ color: "white", fontWeight: 600, fontSize: "0.9rem" }}>
-          Pre-register on Google Play
-        </span>
-      </div>
+      />
 
       <style>{`
         @keyframes spin {
