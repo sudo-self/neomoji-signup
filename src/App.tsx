@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 import '@google/model-viewer';
 import { supabase } from './lib/supabase';
 
-// Type declaration for model-viewer element
+// model-viewer
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -29,9 +29,9 @@ export default function App() {
   const [eligibleForRewards, setEligibleForRewards] = useState(false);
   const [isInteractingWithModel, setIsInteractingWithModel] = useState(false);
 
-  // Add structured data and additional SEO
+
   useEffect(() => {
-    // Add additional meta tags dynamically if needed
+    // SEO
     const addMetaTag = (property: string, content: string) => {
       const existingTag = document.querySelector(`meta[property="${property}"]`);
       if (!existingTag) {
@@ -42,7 +42,7 @@ export default function App() {
       }
     };
 
-    // Ensure all meta tags are present
+
     addMetaTag('og:url', 'https://neomoji-beta.netlify.app');
     addMetaTag('og:type', 'website');
   }, []);
@@ -89,29 +89,29 @@ export default function App() {
     }
 
     try {
-      // Store email in Supabase database
+     
       const { error: supabaseError } = await supabase
         .from('email_signups')
         .insert([{ email }]);
 
       if (supabaseError) {
         console.error('Supabase error:', supabaseError);
-        // Continue with Formspree even if Supabase fails
+      
       }
 
-      // Send to Formspree for email collection
+  
       const response = await fetch("https://formspree.io/f/xvgpyrpp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
-      // Check if the request was successful
+  
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Everyone gets rewards now!
+    
       const isEligible = true;
       
       setSubmitted(true);
