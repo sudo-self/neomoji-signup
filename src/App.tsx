@@ -45,6 +45,13 @@ export default function App() {
 
     addMetaTag('og:url', 'https://neomoji-beta.netlify.app');
     addMetaTag('og:type', 'website');
+    addMetaTag('og:title', 'NeoMoji - Matrix Themed Emoji App');
+    addMetaTag('og:description', 'Experience the Matrix with NeoMoji - the ultimate Matrix-themed emoji app. Join the beta and unlock exclusive rewards!');
+    addMetaTag('og:image', 'https://github.com/user-attachments/assets/edac24e7-3b65-4126-9526-ff70f1f56760');
+    addMetaTag('twitter:card', 'summary_large_image');
+    addMetaTag('twitter:title', 'NeoMoji - Matrix Themed Emoji App');
+    addMetaTag('twitter:description', 'Experience the Matrix with NeoMoji - the ultimate Matrix-themed emoji app. Join the beta and unlock exclusive rewards!');
+    addMetaTag('twitter:image', 'https://github.com/user-attachments/assets/edac24e7-3b65-4126-9526-ff70f1f56760');
   }, []);
 
   useEffect(() => {
