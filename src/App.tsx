@@ -47,11 +47,16 @@ export default function App() {
 
     try {
       // Send to Formspree for email collection
-      await fetch("https://formspree.io/f/xgejnqyw", {
+      const response = await fetch("https://formspree.io/f/xgejnqyw", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
+
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       // Simulate checking for early access eligibility
       const isEligible = Math.random() < 0.3; // 30% chance to be eligible
@@ -61,7 +66,7 @@ export default function App() {
       launchConfetti();
       setEligibleForRewards(isEligible);
     } catch (err) {
-      console.error("Form error:", err);
+      console.error("Form submission error:", err);
       setError("Network error. Please try again.");
     } finally {
       setLoading(false);
