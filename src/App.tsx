@@ -190,8 +190,8 @@ export default function App() {
                 <button
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav';
-                    link.download = 'NeoMoji-Ringtone.wav';
+                    link.href = '/rewards/WhyGetUp.mp3';
+                    link.download = 'WhyGetUp.mp3';
                     link.click();
                   }}
                   style={{ 
@@ -210,7 +210,7 @@ export default function App() {
                 <button
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = 'https://modelviewer.dev/shared-assets/models/Astronaut.glb';
+                    link.href = '/rewards/NeoMoji.glb';
                     link.download = 'NeoMoji.glb';
                     link.click();
                   }}
