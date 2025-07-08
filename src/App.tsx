@@ -205,12 +205,13 @@ export default function App() {
                   style={{ 
                     display: "block", 
                     marginBottom: "0.5rem", 
-                    color: "#3b82f6",
+                    color: "#ec4899",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
                     textDecoration: "underline",
-                    fontSize: "1rem"
+                    fontSize: "1rem",
+                    textShadow: "0 0 8px rgba(236, 72, 153, 0.4)"
                   }}
                 >
                   📥 Android NeoMoji Ringtone!
@@ -224,12 +225,13 @@ export default function App() {
                   }}
                   style={{ 
                     display: "block", 
-                    color: "#3b82f6",
+                    color: "#ec4899",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
                     textDecoration: "underline",
-                    fontSize: "1rem"
+                    fontSize: "1rem",
+                    textShadow: "0 0 8px rgba(236, 72, 153, 0.4)"
                   }}
                 >
                   📥 Limited NeoMoji 3D Model!
