@@ -365,7 +365,7 @@ export default function App() {
                     textShadow: "0 0 8px rgba(255, 255, 255, 0.3)",
                   }}
                 >
-                  🎮 Get Google Play testing link instantly!
+                 email is kept private and only used to grant you early access
                 </label>
                 <input
                   type="email"
