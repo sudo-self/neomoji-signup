@@ -46,26 +46,20 @@ export default function App() {
     }
 
     try {
-      const response = await fetch('/functions/v1/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      // Send to Formspree for email collection
+      await fetch("https://formspree.io/f/xgejnqyw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        setError(result.error || "Something went wrong.");
-        setLoading(false);
-        return;
-      }
+      // Simulate checking for early access eligibility
+      const isEligible = Math.random() < 0.3; // 30% chance to be eligible
       
       setSubmitted(true);
       setEmail("");
       launchConfetti();
-      setEligibleForRewards(result.eligible);
+      setEligibleForRewards(isEligible);
     } catch (err) {
       console.error("Form error:", err);
       setError("Network error. Please try again.");
