@@ -205,13 +205,14 @@ export default function App() {
                   style={{ 
                     display: "block", 
                     marginBottom: "0.5rem", 
-                    color: "#ec4899",
+                    color: "#fbbf24",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
                     textDecoration: "underline",
                     fontSize: "1rem",
-                    textShadow: "0 0 8px rgba(236, 72, 153, 0.4)"
+                    textShadow: "0 0 12px rgba(251, 191, 36, 0.6)",
+                    fontWeight: "600"
                   }}
                 >
                   📥 Android NeoMoji Ringtone!
@@ -225,13 +226,14 @@ export default function App() {
                   }}
                   style={{ 
                     display: "block", 
-                    color: "#ec4899",
+                    color: "#fbbf24",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
                     textDecoration: "underline",
                     fontSize: "1rem",
-                    textShadow: "0 0 8px rgba(236, 72, 153, 0.4)"
+                    textShadow: "0 0 12px rgba(251, 191, 36, 0.6)",
+                    fontWeight: "600"
                   }}
                 >
                   📥 Limited NeoMoji 3D Model!
@@ -278,7 +280,8 @@ export default function App() {
                     fontSize: "0.9rem",
                     fontWeight: 500,
                     textAlign: "center",
-                    color: "#f1f5f9",
+                    color: "#ffffff",
+                    textShadow: "0 0 8px rgba(255, 255, 255, 0.3)",
                   }}
                 >
                   official playstore link sent to your email
@@ -299,7 +302,7 @@ export default function App() {
                     borderRadius: "8px",
                     fontSize: "1rem",
                     background: "rgba(15, 23, 42, 0.8)",
-                    color: "#f8fafc",
+                    color: "#ffffff",
                     backdropFilter: "blur(10px)",
                     boxSizing: "border-box",
                   }}
@@ -415,14 +418,15 @@ export default function App() {
         }
         
         input::placeholder {
-          color: rgba(148, 163, 184, 0.8) !important;
+          color: rgba(203, 213, 225, 0.9) !important;
         }
         
         input:focus {
           outline: none;
           border-color: rgba(59, 130, 246, 0.5);
           box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-          background: rgba(15, 23, 42, 0.9) !important;
+          background: rgba(15, 23, 42, 0.95) !important;
+          color: #ffffff !important;
         }
       `}</style>
     </div>
