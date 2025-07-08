@@ -333,7 +333,7 @@ export default function App() {
             >
               ⭐ RATED E FOR EVERYONE ⭐<br/>
               <span style={{ fontSize: "0.8rem", fontWeight: "normal" }}>
-                Join thousands already testing!
+                Join the beta already in testing!
               </span>
             </div>
 
