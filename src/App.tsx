@@ -79,12 +79,10 @@ export default function App() {
       style={{
         minHeight: "100vh",
         width: "100%",
-        background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)",
-        backgroundImage: `
-          radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.05) 0%, transparent 50%)
-        `,
+        backgroundImage: "url('/matrix.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -109,7 +107,7 @@ export default function App() {
         }}
       >
         <model-viewer
-          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+          src="/NeoMoji.glb"
           ar
           auto-rotate
           camera-controls
