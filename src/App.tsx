@@ -29,6 +29,24 @@ export default function App() {
   const [eligibleForRewards, setEligibleForRewards] = useState(false);
   const [isInteractingWithModel, setIsInteractingWithModel] = useState(false);
 
+  // Add structured data and additional SEO
+  useEffect(() => {
+    // Add additional meta tags dynamically if needed
+    const addMetaTag = (property: string, content: string) => {
+      const existingTag = document.querySelector(`meta[property="${property}"]`);
+      if (!existingTag) {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        meta.setAttribute('content', content);
+        document.head.appendChild(meta);
+      }
+    };
+
+    // Ensure all meta tags are present
+    addMetaTag('og:url', 'https://neomoji-beta.netlify.app');
+    addMetaTag('og:type', 'website');
+  }, []);
+
   useEffect(() => {
     const handleTouchMove = (e: TouchEvent) => {
       if (isInteractingWithModel) {
